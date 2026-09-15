@@ -37,13 +37,14 @@ const crypto = require('crypto');
 // =============================================================================
 const CONFIG = {
   port: Number.isInteger(Number(process.env.PORT)) && Number(process.env.PORT) > 0
-  ? Number(process.env.PORT)
-  : (Number.isInteger(Number(process.env.TUNNEL_PORT)) && Number(process.env.TUNNEL_PORT) > 0
-    ? Number(process.env.TUNNEL_PORT)
-    : 10000),
+    ? Number(process.env.PORT)
+    : (Number.isInteger(Number(process.env.TUNNEL_PORT)) && Number(process.env.TUNNEL_PORT) > 0
+      ? Number(process.env.TUNNEL_PORT)
+      : 10000),
+
   host: process.env.TUNNEL_HOST || '0.0.0.0',
   jwtSecret: process.env.JWT_SECRET || 'change-me-in-production',
-  apiBaseUrl: process.env.API_BASE_URL || 'http://localhost:8000/api',
+  apiBaseUrl: process.env.API_BASE_URL || 'https://sumbane-portifolio.wuaze.com/backend/public/api',
   pingInterval: 15000,
   pingTimeout: 30000,
   maxFrameSize: 65535,
